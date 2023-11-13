@@ -1,9 +1,10 @@
+# this file runs the app and render the html page
+
 # import necessary modules
-from flask import Flask, render_template
+from flask import render_template
+from tools import app
 
 
-# creare a flask instance
-app = Flask(__name__)
 
 
 # define the route
@@ -12,6 +13,6 @@ def index_html():
     return render_template('index.html')
 
 
-# entery point and run the "app"
+# Run the app
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001, debug=True)
